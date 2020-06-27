@@ -1,5 +1,4 @@
-
-class CatalogueItem {
+class CatalogueItem implements Comparable<CatalogueItem> {
       
     private Integer id;
     private String itemName;
@@ -24,5 +23,9 @@ class CatalogueItem {
         itemName = newName;
         category = newCategory;
     }
-    
+
+    @Override
+    public int compareTo(CatalogueItem o) {
+        return this.category.compareTo(o.getCategory());
+    }
 }
